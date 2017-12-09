@@ -1,5 +1,7 @@
 /* This is a CSS comment.*/
-
+.description {
+	color : red;
+}
 
 /*
 Comments are only to help PEOPLE read a code file. The
