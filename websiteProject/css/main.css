@@ -23,10 +23,6 @@ section {
 	font-family: 'Indie Flower', bold;
 }
 
-.app {
-    display: -webkit-flex;
-    display: flex;
-}
 
 .center_image {
 	display:block;
