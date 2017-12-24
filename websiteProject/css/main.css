@@ -1,0 +1,81 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;    
+} 
+
+p {
+    margin: 0;
+    text-indent: 2em;
+    font-family: 'Indie Flower', bold;
+}
+
+section {
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 1%;
+}
+
+#title {
+	color: blue;
+	text-align: center;
+	font-family: 'Indie Flower', bold;
+}
+
+.app {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.center_image {
+	display:block;
+	margin: auto;
+    height: auto;
+    padding: 10px;
+}
+
+.column_img {
+	width: 50%;
+}
+
+.final_text {
+	font-size: 30px;
+	text-align: center;
+	text-indent: 0;
+}
+
+.footer_column_img {
+	width: 33%;
+}
+
+.footer_table {
+	margin-top: 5%;
+}
+
+.logo {
+	max-width: 20%;
+	margin-left: 14%;
+	margin-right: 14%;
+}
+
+.medium_size {
+	width: 10%;
+}
+
+.part_title {
+	margin-bottom:1px;
+	font-family: 'Indie Flower', cursive;
+}
+
+.story_images{
+	border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    max-width: 100%;
+}
+
+.story_images:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
