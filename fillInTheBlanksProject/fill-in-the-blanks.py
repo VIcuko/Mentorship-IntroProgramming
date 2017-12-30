@@ -15,7 +15,7 @@ You will have 3 attempts to complete each level. Good luck!\n"""
 	print (userName,",", gameExplanation)
 
 # This function enables the user to choose the level of difficulty
-	# and returns the level
+# and returns the level
 def difficulty():
 	informed = False
 	level=-1
@@ -68,13 +68,21 @@ def checkSolution(question,number,answer):
 # This function modifies the question text to include the correct
 # answer informed by the user and returns it.
 def informAnswer(question,number):
-	space = "__"+str(number)+"___"
+	space = "___"+str(number+1)+"___"
+	new_question = question[0].replace(space,question[1][number])
+	print (new_question)
 	return question[0].replace(space,question[1][number])
 
 # This function enables the user to choose the amount of attempts
 # for the game. It returns the amount of attempts indicated by the user.
 def chooseAttempts():
-	attempts = input("How many attempts do you want to have?\n")
+	validAnswer = False
+	while not validAnswer:
+		attempts = input("How many attempts do you want to have?\n")
+		if attempts.isdigit():
+			validAnswer = True
+		else:
+			print ("\nSorry, your answer contains letters, it should only be numbers\n")
 	return int(attempts)
 
 # This function includes the main part of the game, prompting
