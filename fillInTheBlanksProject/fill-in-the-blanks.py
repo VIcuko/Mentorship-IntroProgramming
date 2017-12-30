@@ -55,10 +55,15 @@ def questions(level):
 	return questions[level][randint(0,2)]
 
 def checkSolution(question,number,answer):
-	questionAnswer = question [1][number]
+	questionAnswer = question[1][number]
 	if questionAnswer.lower() == answer.lower():
 		return True
 	return False
+
+def informAnswer(question,number):
+	space = "__"+str(number)+"___"
+	return question.replace(space,q[1][number])
+
 
 # IPND Stage 2 Final Project
 
