@@ -12,7 +12,7 @@ def explanation(userName):
 	You will have 3 attempts to complete each level. Good luck!"""
 	print (userName,", ", gameExplanation)
 
-def dificulty():
+def difficulty():
 	easy = "easy"
 	medium = "medium"
 	hard = "hard"
@@ -35,7 +35,30 @@ def dificulty():
 	return level
 
 def questions(level):
-	questions[["",""],["",""],["",""]]
+	easy = [["Two wrongs don't make a ___1___.",["right"]],
+			["The pen is mightier than the ___1___.",["sword"]],
+			["No man is an ___1___.",["island"]]
+			]
+	
+	medium = [["When the ___1___ gets ___2___, the ___2___ get ___1___.",["going","tough"]],
+			["People who live in ___1___ houses should not throw ___2___.",["glass","stones"]],
+			["Hope for the ___1___, but prepare for the ___2___.",["best","worst"]]
+			]
+
+	hard = [["A ___1___ is worth a ___2___ ___3___.",["picture","thousand","words"]],
+			["Never ___1___ a gift ___2___ in the ___3___.",["look","horse","mouth"]],
+			["You can't make an ___1___ without ___2___ a few ___3___.",["omelet","breaking","eggs"]]
+			]
+
+	questions = [easy, medium, hard]
+
+	return questions[level][randint(0,2)]
+
+def checkSolution(question,number,answer):
+	questionAnswer = question [1][number]
+	if questionAnswer.lower() == answer.lower():
+		return True
+	return False
 
 # IPND Stage 2 Final Project
 
