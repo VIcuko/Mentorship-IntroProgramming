@@ -18,16 +18,19 @@ def difficulty():
 	hard = "hard"
 	informed = False
 	level=0
-	while informed:
+	while not informed:
 		selectionMessage="Please choose the difficulty level from the following"
 		text = raw_input(selectionMessage,": ",easy,"/",medium,"/",hard)
 		if text.lower() == easy.lower():
+			print ("Ok! You chose easy!")
 			informed = True
 			level = 0
 		elif text.lower() == medium.lower():
+			print ("Ok! You chose medium!")
 			informed = True
 			level = 1
 		elif text.lower() == hard.lower():
+			print ("Ok! You chose hard!")
 			informed = True
 			level = 2
 		else:
@@ -62,9 +65,60 @@ def checkSolution(question,number,answer):
 
 def informAnswer(question,number):
 	space = "__"+str(number)+"___"
-	return question.replace(space,q[1][number])
+	return question[0].replace(space,q[1][number])
 
+def play():
+	salutation()
+	explanation()
+	level = difficulty()
+	question = questions(level)
+	print ("Alright, let's begin playing! The saying you need to guess is: ", 
+		question[0])
+	counter = 0
+	mistakes = 0
+	completed = False
+	print ("Let's begin with word ",counter+1)
+	
+	while not completed or mistakes < 3:
+		guess = raw_input("Go ahead! Make a guess: ")
+		if checkSolution(question,counter,guess):
+			print("Hurrah! that was right!")
+			question[0]=informAnswer(question,counter)
+			counter+=1
+			if counter >= len(question[1]):
+				completed = True
+		else:
+			mistakes += 1
+			print("Sorry, that answer wasn't correct.")
+			if mistakes < 3:
+				print ("So far you have made ",mistakes," mistakes")
+				print ("But you can still try again!")
 
+	return completed
+
+def game():
+	keep_playing = True
+	while keep_playing:
+		completed = play()
+		
+		if completed:
+			print ("Hurrah! You made it! Well done!!")
+		else:
+			print ("Sorry you couldn't make it. No worries, you can always keep playing!")
+
+		validAnswer = False
+		while not validAnswer:
+			answer = raw_input("Do you want to play again? (Y/N): ")
+			if answer.lower() == "n" or answer.lower() == "no": 
+				validAnswer = True
+				keep_playing = False
+			elif answer.lower() == "y" or answer.lower() == "yes":
+				validAnswer = True
+			else:
+				print ("I'm afraid that is not a valid answer.\nYou need to write Y for yes or N for no")
+	print ("Thank you for playing! Hope you enjoyed it! :D")
+
+game()
 # IPND Stage 2 Final Project
 
 # You've built a Mad-Libs game with some help from Sean.
