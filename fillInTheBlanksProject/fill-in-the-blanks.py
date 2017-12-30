@@ -1,3 +1,42 @@
+from random import randint
+
+def salutation():
+	userName = raw_input("Hello friend! What is your name? ")
+	print ("Hello ",userName,"\nWelcome to Sayings game!")
+	return userName
+
+def explanation(userName):
+	gameExplanation = """this game consists of the following:\n
+	You willbe given a saying with blank spaces for you to fill in.\n
+	In order to win the game, you need to guess all blanks correctly!\n
+	You will have 3 attempts to complete each level. Good luck!"""
+	print (userName,", ", gameExplanation)
+
+def dificulty():
+	easy = "easy"
+	medium = "medium"
+	hard = "hard"
+	informed = False
+	level=0
+	while informed:
+		selectionMessage="Please choose the difficulty level from the following"
+		text = raw_input(selectionMessage,": ",easy,"/",medium,"/",hard)
+		if text.lower() == easy.lower():
+			informed = True
+			level = 0
+		elif text.lower() == medium.lower():
+			informed = True
+			level = 1
+		elif text.lower() == hard.lower():
+			informed = True
+			level = 2
+		else:
+			print ("Sorry, ",text," is not one of the options.")
+	return level
+
+def questions(level):
+	questions[["",""],["",""],["",""]]
+
 # IPND Stage 2 Final Project
 
 # You've built a Mad-Libs game with some help from Sean.
