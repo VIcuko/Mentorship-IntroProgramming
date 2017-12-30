@@ -38,19 +38,19 @@ def difficulty():
 # This function returns a question corresponding to the chosen level of
 # difficulty
 def questions(level):
-	easy = [["Two wrongs don't make a ___1___.",["right"]],
-			["The pen is mightier than the ___1___.",["sword"]],
-			["No man is an ___1___.",["island"]]
+	easy = [["The ___1___ is always ___2___ on the ___3___ side of the ___4___.",["grass","greener","other","hill"]],
+			["You can ___1___ a horse to ___2___, but you can't ___3___ him ___4___.",["lead","water","make","drink"]],
+			["If you want ___1___ done ___2___, you ___3___ to do it ___4___.",["something","right","have","yourself"]]
 			]
 	
 	medium = [["When the ___1___ gets ___2___, the ___2___ get ___1___.",["going","tough"]],
-			["People who live in ___1___ houses should not throw ___2___.",["glass","stones"]],
-			["Hope for the ___1___, but prepare for the ___2___.",["best","worst"]]
+			["___1___ who live in ___2___ houses ___3___ not throw ___4___.",["People","glass","should","stones"]],
+			["___1___ for the ___2___, but ___3___ for the ___4___.",["Hope","best","prepare","worst"]]
 			]
 
-	hard = [["A ___1___ is worth a ___2___ ___3___.",["picture","thousand","words"]],
-			["Never ___1___ a gift ___2___ in the ___3___.",["look","horse","mouth"]],
-			["You can't make an ___1___ without ___2___ a few ___3___.",["omelet","breaking","eggs"]]
+	hard = [["A ___1___ is ___2___ a ___3___ ___4___.",["picture","worth","thousand","words"]],
+			["Never ___1___ a gift ___2___ in ___3___ ___4___.",["look","horse","the","mouth"]],
+			["You can't ___1___ an ___2___ without ___3___ a few ___4___.",["make","omelet","breaking","eggs"]]
 			]
 
 	questions = [easy, medium, hard]
