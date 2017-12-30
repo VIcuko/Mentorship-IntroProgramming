@@ -1,22 +1,22 @@
 from random import randint
 
-def salutation():
-	# This function says hello to the user and asks for his/her name
+# This function says hello to the user and asks for his/her name
+def salutation():	
 	userName = input("\nHello friend! What is your name? ")
 	print ("Hello ",userName,"\nWelcome to Sayings game!\n")
 	explanation(userName)
 
+# This function shows a brief explanation of how the game works
 def explanation(userName):
-	# This function shows a brief explanation of how the game works
 	gameExplanation = """this game consists of the following:\n
 You will be given a saying with blank spaces for you to fill in.
 In order to win the game, you need to guess all blanks correctly!
 You will have 3 attempts to complete each level. Good luck!\n"""
 	print (userName,",", gameExplanation)
 
-def difficulty():
-	# This function enables the user to choose the level of difficulty
+# This function enables the user to choose the level of difficulty
 	# and returns the level
+def difficulty():
 	informed = False
 	level=-1
 	while level < 0:
@@ -35,9 +35,9 @@ def difficulty():
 			print ("\nSorry, ",text," is not one of the options.\n")
 	return level
 
+# This function returns a question corresponding to the chosen level of
+# difficulty
 def questions(level):
-	# This function returns a question corresponding to the chosen level of
-	# difficulty
 	easy = [["Two wrongs don't make a ___1___.",["right"]],
 			["The pen is mightier than the ___1___.",["sword"]],
 			["No man is an ___1___.",["island"]]
@@ -57,31 +57,31 @@ def questions(level):
 
 	return questions[level][randint(0,2)]
 
+# This function checks if a guess made by the user is right or not
+# and returns True if it is right and False if it isn't
 def checkSolution(question,number,answer):
-	# This function checks if a guess made by the user is right or not
-	# and returns True if it is right and False if it isn't
 	questionAnswer = question[1][number]
 	if questionAnswer.lower() == answer.lower():
 		return True
 	return False
 
+# This function modifies the question text to include the correct
+# answer informed by the user and returns it.
 def informAnswer(question,number):
-	# This function modifies the question text to include the correct
-	# answer informed by the user and returns it.
 	space = "__"+str(number)+"___"
 	return question[0].replace(space,question[1][number])
 
+# This function enables the user to choose the amount of attempts
+# for the game. It returns the amount of attempts indicated by the user.
 def chooseAttempts():
-	# This function enables the user to choose the amount of attempts
-	# for the game. It returns the amount of attempts indicated by the user.
 	attempts = input("How many attempts do you want to have?\n")
 	return int(attempts)
 
+# This function includes the main part of the game, prompting
+# the user for answers and managing the user responses
+# It returns True if the user has completed the game or False
+# if the user commited too many mistakes.
 def play():
-	# This function includes the main part of the game, prompting
-	# the user for answers and managing the user responses
-	# It returns True if the user has completed the game or False
-	# if the user commited too many mistakes.
 	level = difficulty()
 	question = questions(level)
 	counter, mistakes, attempts = 0, 0, chooseAttempts()
@@ -101,8 +101,8 @@ def play():
 				print ("So far you have made ",mistakes," mistakes.\nBut you can still try again!\n")
 	return counter >= len(question[1])
 
+# This function manages the beginning and ending of the game
 def game():
-	# This function manages the beginning and ending of the game
 	salutation()
 	keep_playing = True
 	while keep_playing:
