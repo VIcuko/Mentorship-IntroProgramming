@@ -17,7 +17,7 @@ class Child(Parent):
 	def show_info(self):
 		print ("Last Name -", self.last_name)
 		print ("Eye Color -", self.eye_color)
-		print ("Number of Toys -", str(number_of_toys))
+		print ("Number of Toys -", str(self.number_of_toys))
 
 
 
@@ -25,4 +25,4 @@ father = Parent("Maverick","blue")
 father.show_info()
 
 little_kid = Child("Maverick","green",10)
-print (little_kid.last_name, little_kid.eye_color, little_kid.number_of_toys)
+little_kid.show_info()
