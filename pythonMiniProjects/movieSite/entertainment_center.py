@@ -19,4 +19,11 @@ matrix = media.Movie("The Matrix",
 movies = [toy_story,avatar,matrix]
 #fresh_tomatoes.open_movies_page(movies)
 
+# Print the class documentation string:
 print (media.Movie.__doc__)
+
+# Print the name of the class:
+print (media.Movie.__name__)
+
+# Print the name of the module in which this class was defined:
+print (media.Movie.__module__)
