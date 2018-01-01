@@ -1,8 +1,9 @@
+import fresh_tomatoes
 import media
 
 toy_story = media.Movie("Toy Story",
 						"A story of a boy and his toys that come to life",
-						"https://en.wikipedia.org/wiki/Toy_Story#/media/File:Toy_Story.jpg",
+						"https://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg",
 						"https://youtu.be/KYz2wyBy3kc")
 
 avatar = media.Movie("Avatar",
@@ -15,9 +16,5 @@ matrix = media.Movie("The Matrix",
 					 "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Matrix_Poster.jpg",
 					 "https://youtu.be/vKQi3bBA1y8")
 
-print (toy_story.storyline)
-print (avatar.storyline)
-
-avatar.show_trailer()
-print (matrix.storyline)
-matrix.show_trailer()
+movies = [toy_story,avatar,matrix]
+fresh_tomatoes.open_movies_page(movies)
