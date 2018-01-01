@@ -4,6 +4,10 @@ class Parent():
 		self.last_name = last_name
 		self.eye_color = eye_color
 
+	def show_info(self):
+		print ("Last Name -", self.last_name)
+		print ("Eye Color -", self.eye_color)
+
 class Child(Parent):
 	def __init__(self, last_name, eye_color, number_of_toys):
 		print ("Child Constructor called")
@@ -12,7 +16,7 @@ class Child(Parent):
 
 
 father = Parent("Maverick","blue")
-print (father.last_name, father.eye_color)
+father.show_info()
 
 little_kid = Child("Maverick","green",10)
 print (little_kid.last_name, little_kid.eye_color, little_kid.number_of_toys)
